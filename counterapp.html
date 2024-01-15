@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter-app</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <section class="bg-clr min-vh-100 d-flex align-items-center justify-content-center w-100  ">
+        <div class="container d-flex align-items-center justify-content-center  flex-column">
+
+            <h1 class="heading mb-5">Advance Counter app</h1>
+            <div class="box p-5">
+
+                <p id="counting" class="number mb-5">0</p>
+                <div class="d-flex align-items-center justify-content-center gap-3 position-relative">
+                    <button id="addbtn" class="btn-1">Add One</button>
+                    <button id="savebtn" class="btn-2">Save</button>
+
+                </div>
+                <p class="text pt-5 pb-2  mb-0">Previous values</p>
+                <p id="value" class="numbr-2 ">0</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <button id="reset" class="btn-3 "><img
+                            src="./assets/images/refresh_FILL0_wght400_GRAD0_opsz24.svg"></button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        const counting = document.getElementById("counting");
+        const addbtn = document.getElementById("addbtn");
+        const savebtn = document.getElementById("savebtn");
+        const value = document.getElementById("value");
+        const reset = document.getElementById("reset")
+
+        addbtn.addEventListener("click", function () {
+            counting.innerHTML = +counting.innerHTML + 1;
+            savebtn.classList.replace("btn-disabled", "btn-filled-bg")
+
+        });
+
+        savebtn.addEventListener("click", function () {
+            if (value.innerHTML == 0) {
+                value.innerHTML = counting.innerHTML
+            } else {
+                value.innerHTML = value.innerHTML + "," + counting.innerHTML
+            }
+        });
+        reset.addEventListener("click", function () {
+            value.innerHTML = 0
+            counting.innerHTML = 0;
+        })
+
+
+    </script>
+</body>
+
+</html>
