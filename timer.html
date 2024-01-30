@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+</head>
+
+<body onload="startTime()">
+
+    <p id="timer"></p> 
+    <p id="interval"></p>
+    <button onclick="myStopFunction()">Stop</button>
+    <button onclick="se"></button>
+   
+    <script>
+
+        const myInterval = setInterval(mytimer, 1000);
+
+        function startTime() {
+            const time = new Date();
+            document.getElementById("timer").innerHTML = time.toLocaleTimeString();
+            setTimeout(function () {
+                startTime()
+            }, 1000);
+        }
+
+        function mytimer() {
+            const time = new Date();
+            document.getElementById("interval").innerHTML = time.toLocaleTimeString();
+        }
+        function myStopFunction() {
+            clearInterval(myInterval);
+        }
+    </script>
+</body>
+
+</html>
