@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards-js</title>
+    <style>
+        .card {
+            background-color: aqua;
+            width: 300px;
+           padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cardcontainer"></div>
+
+    <script>
+        const myarr = [
+            {
+                Name: "Sujata",
+                Age: 20,
+                About: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque minus totam tempora esse libero maxime facilis, quo, similique cum nobis quos, incidunt sint maiores at!"
+
+            },
+            {
+                Name: "Sujata",
+                Age: 20,
+                About: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque minus totam tempora esse libero maxime facilis, quo, similique cum nobis quos, incidunt sint maiores at!"
+
+            },
+            {
+                Name: "Sujata",
+                Age: 20,
+                About: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque minus totam tempora esse libero maxime facilis, quo, similique cum nobis quos, incidunt sint maiores at!"
+
+            }
+        ]
+
+        // const cardcontainer = document.getElementById("cardcontainer")
+
+        // myarr.forEach(element => {
+        //     const cardelement = document.createElement("div")
+        //     cardelement.className = ("card")
+        //     cardelement.innerHTML =
+        //         `<h1> ${element.Name}</h1>
+        //         <p> ${element.Age}</p>
+        //          <p> ${element.About}</p>`
+
+        //     cardcontainer.appendChild(cardelement)
+
+        // }
+        // )
+
+        for (let index = 0; index < myarr.length; index++) {
+            const cardelement = document.createElement("div")
+            cardelement.className = ("card")
+            cardelement.innerHTML =
+                `<h1> ${myarr[index].Name}</h1>
+                <p> ${myarr[index].Age}</p>
+                 <p> ${myarr[index].About}</p>`
+
+            cardcontainer.appendChild(cardelement);
+
+        }
+
+    </script>
+</body>
+
+</html>

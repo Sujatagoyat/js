@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo app</title>
+
+    <style>
+        * {
+            list-style-type: none;
+        }
+
+        .line {
+           color: black;
+            text-decoration: line-through;
+        }
+
+        .check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .remove {
+            margin-left: 20px
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="inputbox" placeholder="Add your tasks">
+    <button id="btn" onclick="add()">add</button>
+    <!-- <button id="btn" onclick="remove()">remove</button> -->
+    <ul id="ul"></ul>
+
+
+
+
+
+
+    <script>
+        const inputbox = document.getElementById("inputbox");
+        const btn = document.getElementById("btn");
+        const ul = document.getElementById("ul");
+        const time = new Date()
+
+
+        function add() {
+            // const li = document.createElement("li")
+            // li.className = "tasklist"
+            // li.innerHTML = `<span>${inputbox.value}</span>`
+            // list.appendChild(li)
+            // inputbox.value = ""
+
+            if (inputbox.value === "") {
+                alert("you must write something!");
+            } else {
+                const li = document.createElement("li")
+                li.className = "list"
+                li.innerHTML = `<button class = "check"   onclick="checkbtn(event)"></button>
+                <span>${inputbox.value}</span> 
+                <span>${time}</span> 
+
+                  
+                  <button class = "remove" onclick="removebtn(event)">remove</button>`
+
+                ul.appendChild(li)
+                inputbox.value = ""
+            }
+        }
+
+
+        function removebtn() {
+            const li = event.target.parentElement;
+            ul.removeChild(li)
+        }
+
+        function checkbtn() {
+            const inputbox = event.target.parentElement;
+            inputbox.classList.toggle("line")
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //     const checked = document.getElementById("checked")
+        //    checked.addEventListener("click", function (){
+        //     li.classlist.add()
+        //    })
+
+
+
+    </script>
+</body>
+<!-- // <button onclick="removebtn(event)">remove</button> -->
+
+</html>
